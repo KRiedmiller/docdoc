@@ -1,0 +1,42 @@
+# installation: pip install mkdocs-material pymdown-extensions pygments
+site_name: Documentation
+
+plugins:
+    - search
+
+use_directory_urls: false
+
+markdown_extensions:
+    - toc:
+        permalink: "#"
+    - pymdownx.extra
+    - admonition # !!! note/info/abstract/tip/success/question/warning/failure/danger/bug/example/quote
+    - pymdownx.details      # ???[+] note/warning/done/danger...
+    - pymdownx.tabbed:
+        alternate_style: true
+    - pymdownx.b64          # for images
+    - pymdownx.highlight:   # code blocks
+        linenums: true
+        anchor_linenums: true
+        line_spans: __span
+        pygments_lang_class: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.smartsymbols # --> +/- =/= 
+    - pymdownx.caret        # ^superscript^
+    - pymdownx.tilde        # ~subscript~
+    - pymdownx.tasklist:    # - [x]
+        clickable_checkbox: "True"
+    - pymdownx.arithmatex:
+        generic: true
+
+# for latex:
+extra_javascript:
+    - javascripts/mathjax.js
+    - https://polyfill.io/v3/polyfill.min.js?features=es6
+    - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+theme:
+    name: material
+    features:
+        - navigation.instant
